@@ -11,7 +11,7 @@ import java.io.IOException;
  * @author HP
  */
 public class BukuAlamat {
-     public static void main(String[] args){
+      public static void main(String[] args){
         EntryBukuAlamat namaRecord = new EntryBukuAlamat();
         BufferedReader dataIn = new BufferedReader(new InputStreamReader(System.in));
         String [] name = new String[100];
@@ -232,5 +232,7 @@ public class BukuAlamat {
                     System.out.println("input tidak valid");
                     }  
             } while (Integer.parseInt(PIL)!=5);
-        }
+    }
 }
+
+         

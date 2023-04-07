@@ -9,7 +9,7 @@ package latihan01042023;
  * @author HP
  */
 public class EntryBukuAlamat {
-       private String[] name = new String[100];
+   private String[] name = new String[100];
     private String[] address = new String[100];
     private String[] notelp = new String[100];
     private String[] alamatemail = new String[100];
@@ -49,3 +49,4 @@ public class EntryBukuAlamat {
         return studentCount;
     }
 }
+
