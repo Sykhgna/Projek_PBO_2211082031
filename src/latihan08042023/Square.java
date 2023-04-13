@@ -8,6 +8,18 @@ package latihan08042023;
  *
  * @author HP
  */
-public class ExtendStudentRecord {
+public class Square extends Shape {
+    private String nm;
+ 
+        
+    public Shape(String nama) {
+        nm = nama; 
+    }
+    
+    public String getName() {
+        return nm;
+    }
+
+    public abstract float getArea();
     
 }

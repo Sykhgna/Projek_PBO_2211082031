@@ -8,6 +8,17 @@ package latihan08042023;
  *
  * @author HP
  */
-public class BentukAbstractClass {
+public abstract class Shape {
+    private String nm;
+ 
+        
+    public Shape(String nama) {
+        nm = nama; 
+    }
     
+    public String getName() {
+        return nm;
+    }
+
+    public abstract float getArea();
 }
