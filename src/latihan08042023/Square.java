@@ -9,17 +9,17 @@ package latihan08042023;
  * @author HP
  */
 public class Square extends Shape {
-    private String nm;
- 
-        
-    public Shape(String nama) {
-        nm = nama; 
-    }
+   private int sisi;
     
-    public String getName() {
-        return nm;
+    public Square(String nama) {
+        super(nama);
+        sisi = 3;
     }
 
-    public abstract float getArea();
-    
+    public float getArea() {
+        float luas;
+        luas = sisi * sisi;
+        return luas;
+    }
 }
+ 
