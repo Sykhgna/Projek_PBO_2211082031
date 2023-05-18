@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sykhgna150423.controller;
-import sykhgna.view.FormBuku;
-import sykhgna.model.*;
+package sykhgna15042023.Controller;
+import sykhgna15042023.view.FormBuku;
+import sykhgna15042023.model.*;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -15,71 +15,69 @@ public class BukuController {
     private BukuDao bukuDao;
     private Buku buku;
     
-    public BukuController(FormBuku formBuku){
+    public BukuController (FormBuku formBuku){
         this.formBuku = formBuku;
         bukuDao = new BukuDaoImpl();
     }
     
     public void bersihForm(){
-        formBuku.getTxtkodeBuku().setText("");
-        formBuku.getTxtjudulBuku().setText("");
+        formBuku.getTxtKodeBuku().setText("");
+        formBuku.getTxtJudulBuku().setText("");
         formBuku.getTxtPengarang().setText("");
         formBuku.getTxtPenerbit().setText("");
-        formBuku.getTxttahunTerbit().setText("");
+        formBuku.getTxtTahunTerbit().setText("");
     }
     
     public void saveBuku(){
         buku = new Buku();
-        buku.setkodeBuku(formBuku.getTxtkodeBuku().getText());
-        buku.setjudulBuku(formBuku.getTxtjudulBuku().getText());
+        buku.setKodeBuku(formBuku.getTxtKodeBuku().getText());
+        buku.setJudulBuku(formBuku.getTxtJudulBuku().getText());
         buku.setPengarang(formBuku.getTxtPengarang().getText());
         buku.setPenerbit(formBuku.getTxtPenerbit().getText());
-        buku.settahunTerbit(formBuku.getTxttahunTerbit().getText());
+        buku.setThnTerbit(formBuku.getTxtTahunTerbit().getText());
         bukuDao.save(buku);
-        javax.swing.JOptionPane.showMessageDialog(formBuku, "Entri OK");
+        javax.swing.JOptionPane.showMessageDialog(formBuku, "Entri Ok");
     }
     
     public void getBuku(){
         int index = formBuku.getTblBuku().getSelectedRow();
         buku = bukuDao.getBuku(index);
         if(buku != null){
-            formBuku.getTxtkodeBuku().setText(buku.getkodeBuku());
-            formBuku.getTxtjudulBuku().setText(buku.getjudulBuku());
+            formBuku.getTxtKodeBuku().setText(buku.getKodeBuku());
+            formBuku.getTxtJudulBuku().setText(buku.getJudulBuku());
             formBuku.getTxtPengarang().setText(buku.getPengarang());
             formBuku.getTxtPenerbit().setText(buku.getPenerbit());
-            formBuku.getTxttahunTerbit().setText(buku.gettahunTerbit());
+            formBuku.getTxtTahunTerbit().setText(buku.getThnTerbit());
         }
     }
     
     public void updateBuku(){
         int index = formBuku.getTblBuku().getSelectedRow();
-        buku.setkodeBuku(formBuku.getTxtkodeBuku().getText());
-        buku.setjudulBuku(formBuku.getTxtjudulBuku().getText());
+        buku.setKodeBuku(formBuku.getTxtKodeBuku().getText());
+        buku.setJudulBuku(formBuku.getTxtJudulBuku().getText());
         buku.setPengarang(formBuku.getTxtPengarang().getText());
         buku.setPenerbit(formBuku.getTxtPenerbit().getText());
-        buku.settahunTerbit(formBuku.getTxttahunTerbit().getText());
-        bukuDao.update(index,buku);
-        javax.swing.JOptionPane.showMessageDialog(formBuku, "Update OK");
+        buku.setThnTerbit(formBuku.getTxtTahunTerbit().getText());
+        bukuDao.update(index, buku);
     }
     
     public void deleteBuku(){
-        int index = formBuku.getTblBuku().getSelectedRow();
+        int index =formBuku.getTblBuku().getSelectedRow();
         bukuDao.delete(index);
-        javax.swing.JOptionPane.showMessageDialog(formBuku, "Delete OK");
+        javax.swing.JOptionPane.showMessageDialog(formBuku, "Delete");
     }
     
     public void tampilData(){
-        DefaultTableModel tabelModel = 
-                (DefaultTableModel) formBuku.getTblBuku().getModel();
+        DefaultTableModel tabelModel = (DefaultTableModel) formBuku.getTblBuku().getModel();
         tabelModel.setRowCount(0);
         java.util.List<Buku> list = bukuDao.getAll();
         for(Buku buku : list){
             Object[] data = {
-                buku.getkodeBuku(),
-                buku.getjudulBuku(),
+                buku.getKodeBuku(),
+                buku.getJudulBuku(),
                 buku.getPengarang(),
                 buku.getPenerbit(),
-                buku.gettahunTerbit()
+                buku.getThnTerbit()
             };
             tabelModel.addRow(data);
         }

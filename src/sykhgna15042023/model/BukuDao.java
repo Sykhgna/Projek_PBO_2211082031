@@ -9,9 +9,9 @@ import java.util.List;
  * @author HP
  */
 public interface BukuDao {
-    void save(Buku buku);
+    void save (Buku buku);
     void update(int index, Buku buku);
-    void delete(int index);
+    void delete (int index);
     Buku getBuku(int index);
-    List<Buku> getAll();
+    List <Buku> getAll();
 }

@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sykhgna150423.controller;
-import sykhgna150423.view.FormAnggota;
-import sykhgna15023.model.*;
+package sykhgna15042023.Controller;
+import sykhgna15042023.view.FormAnggota;
+import sykhgna15042023.model.*;
 import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author HP
  */
 public class AnggotaController {
-     private FormAnggota formAnggota;
+    private FormAnggota formAnggota;
     private AnggotaDao anggotaDao;
     private Anggota anggota;
     
@@ -32,7 +32,8 @@ public class AnggotaController {
         anggota.setNama(formAnggota.getTxtNama().getText());
         anggota.setAlamat(formAnggota.getTxtAlamat().getText());
         anggotaDao.save(anggota);
-        javax.swing.JOptionPane.showMessageDialog(formAnggota, "Entri OK");
+        javax.swing.JOptionPane.showMessageDialog(formAnggota,
+                "Entri Ok");
     }
     
     public void getAnggota(){
@@ -50,18 +51,19 @@ public class AnggotaController {
         anggota.setNobp(formAnggota.getTxtNobp().getText());
         anggota.setNama(formAnggota.getTxtNama().getText());
         anggota.setAlamat(formAnggota.getTxtAlamat().getText());
-        anggotaDao.update(index,anggota);
-        javax.swing.JOptionPane.showMessageDialog(formAnggota, "Update OK");
+        anggotaDao.update(index, anggota);
+        javax.swing.JOptionPane.showMessageDialog(formAnggota,
+                "Update Ok");
     }
     
     public void deleteAnggota(){
         int index = formAnggota.getTblAnggota().getSelectedRow();
         anggotaDao.delete(index);
-        javax.swing.JOptionPane.showMessageDialog(formAnggota, "Delete OK");
+        javax.swing.JOptionPane.showMessageDialog(formAnggota, "Delete");
     }
     
     public void tampilData(){
-        DefaultTableModel tabelModel = 
+        DefaultTableModel tabelModel =
                 (DefaultTableModel) formAnggota.getTblAnggota().getModel();
         tabelModel.setRowCount(0);
         java.util.List<Anggota> list = anggotaDao.getAll();
@@ -70,8 +72,8 @@ public class AnggotaController {
                 anggota.getNobp(),
                 anggota.getNama(),
                 anggota.getAlamat()
-            };
-            tabelModel.addRow(data);
+        };
+        tabelModel.addRow(data);
         }
     }
 }

@@ -9,38 +9,37 @@ package sykhgna15042023.model;
  * @author HP
  */
 public class Buku {
-    private String kodebuku;
+   private String kodebuku;
     private String judulbuku;
     private String pengarang;
     private String penerbit;
-    private String tahunterbit;
+    private String thnterbit;
     
     public Buku(){
     }
     
-    public Buku(String kodebuku, String judulbuku, String pengarang, String penerbit, String tahunterbit){
+    public Buku(String kodebuku, String judulbuku, String pengarang, String penerbit, String thnterbit){
         this.kodebuku = kodebuku;
         this.judulbuku = judulbuku;
         this.pengarang = pengarang;
         this.penerbit = penerbit;
-        this.tahunterbit = tahunterbit;
+        this.thnterbit = thnterbit;
+        
     }
     
-    public String getkodeBuku(){
+    public String getKodeBuku(){
         return kodebuku;
     }
-    public void setkodeBuku(String kodebuku){
+    public void setKodeBuku(String kodebuku){
         this.kodebuku = kodebuku;
     }
-    ////////////////////////////////////
     
-    public String getjudulBuku(){
+    public String getJudulBuku(){
         return judulbuku;
     }
-    public void setjudulBuku(String judulbuku){
+    public void setJudulBuku(String judulbuku){
         this.judulbuku = judulbuku;
     }
-    ////////////////////////////////////
     
     public String getPengarang(){
         return pengarang;
@@ -48,7 +47,6 @@ public class Buku {
     public void setPengarang(String pengarang){
         this.pengarang = pengarang;
     }
-    ////////////////////////////////////
     
     public String getPenerbit(){
         return penerbit;
@@ -56,14 +54,10 @@ public class Buku {
     public void setPenerbit(String penerbit){
         this.penerbit = penerbit;
     }
-    ////////////////////////////////////
-    
-    public String gettahunTerbit(){
-        return tahunterbit;
+    public String getThnTerbit(){
+        return thnterbit;
     }
-    public void settahunTerbit(String tahunterbit){
-        this.tahunterbit = tahunterbit;
+    public void setThnTerbit(String thnterbit){
+        this.thnterbit = thnterbit;
     }
-    ////////////////////////////////////
-
 }

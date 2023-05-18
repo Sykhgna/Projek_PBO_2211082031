@@ -9,7 +9,7 @@ package sykhgna15042023.model;
  * @author HP
  */
 public class Anggota {
-     private String nobp;
+    private String nobp;
     private String nama;
     private String alamat;
     
@@ -25,25 +25,25 @@ public class Anggota {
     public String getNobp(){
         return nobp;
     }
+    
     public void setNobp(String nobp){
         this.nobp = nobp;
     }
-    ////////////////////////////////////
     
     public String getNama(){
         return nama;
     }
+    
     public void setNama(String nama){
         this.nama = nama;
     }
-    ////////////////////////////////////
     
     public String getAlamat(){
         return alamat;
     }
-    public void setAlamat(String alamat){
+    
+   public void setAlamat(String alamat){
         this.alamat = alamat;
     }
-    ////////////////////////////////////
     
 }
