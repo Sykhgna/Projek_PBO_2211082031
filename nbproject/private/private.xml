@@ -10,14 +10,17 @@
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna13042023/Line.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/Buku.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/view/FormAnggota.java</file>
+            <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/UTS_A_/model/PelangganDao.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna13042023/MyInteger.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/latihan08042023/Square.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/Controller/AnggotaController.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/AnggotaDaoImpl.java</file>
-            <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/view/FormPeminjaman.java</file>
+            <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/view/formPeminjaman.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/Peminjaman.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/view/FormBuku.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/AnggotaDao.java</file>
+            <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/UTS_A_/model/Pelanggan.java</file>
+            <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/UTS_A_/model/PelangganDaoImpl.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/latihan08042023/Shape.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/latihan08042023/LatModul11_1.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/Anggota.java</file>
@@ -26,6 +29,7 @@
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/Controller/BukuController.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna08042023/Student.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna13042023/MyDouble.java</file>
+            <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/UTS_A/Controller/PelangganController.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna08042023/Person.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/latihan08042023/StudentRecord.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna13042023/InterfaceExample.java</file>
@@ -33,6 +37,7 @@
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/BukuDao.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/PengembalianDaoImpl.java</file>
             <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/sykhgna15042023/model/PeminjamanDao.java</file>
+            <file>file:/C:/Users/HP/OneDrive/Documents/GitHub/Projek_PBO_2211082031/src/UTS_A/view/formPelanggan.java</file>
         </group>
     </open-files>
 </project-private>
