@@ -1,49 +1,21 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sykhgna15042023.view;
-import sykhgna15042023.Controller.BukuController;
+
 /**
  *
  * @author HP
  */
-public class FormBuku extends javax.swing.JPanel {
-BukuController controller;
+public class FormBuku extends javax.swing.JFrame {
+
     /**
-     * Creates new form Buku
+     * Creates new form FormBuku
      */
     public FormBuku() {
         initComponents();
-        controller = new BukuController(this);
-        controller.bersihForm();
-        controller.tampilData();
     }
-    
-    public javax.swing.JTextField getTxtKodeBuku(){
-        return txtKodeBuku;
-    }
-    
-    public javax.swing.JTextField getTxtJudulBuku(){
-        return txtJudulBuku;
-    }
-    
-    public javax.swing.JTextField getTxtPengarang(){
-        return txtPengarang;
-    }
-    
-    public javax.swing.JTextField getTxtPenerbit(){
-        return txtPenerbit;
-    }
-    
-    public javax.swing.JTextField getTxtTahunTerbit(){
-        return txtTahunTerbit;
-    }
-    
-    public javax.swing.JTable getTblBuku(){
-        return tblBuku;
-    }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,231 +26,23 @@ BukuController controller;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        txtKodeBuku1 = new javax.swing.JLabel();
-        txtJudulBuku2 = new javax.swing.JLabel();
-        txtPengarang1 = new javax.swing.JLabel();
-        txtPenerbit1 = new javax.swing.JLabel();
-        txtTahunTerbit1 = new javax.swing.JLabel();
-        txtKodeBuku = new javax.swing.JTextField();
-        txtJudulBuku = new javax.swing.JTextField();
-        txtPengarang = new javax.swing.JTextField();
-        txtPenerbit = new javax.swing.JTextField();
-        txtTahunTerbit = new javax.swing.JTextField();
-        btnInsert = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblBuku = new javax.swing.JTable();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
-        txtKodeBuku1.setText("Kode Buku");
-
-        txtJudulBuku2.setText("Judul Buku");
-
-        txtPengarang1.setText("Pengarang");
-
-        txtPenerbit1.setText("Penerbit");
-
-        txtTahunTerbit1.setText("Tahun Terbit");
-
-        txtKodeBuku.setText("jTextField1");
-
-        txtJudulBuku.setText("jTextField2");
-
-        txtPengarang.setText("jTextField3");
-
-        txtPenerbit.setText("jTextField4");
-
-        txtTahunTerbit.setText("jTextField5");
-
-        btnInsert.setText("Insert");
-        btnInsert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertActionPerformed(evt);
-            }
-        });
-
-        btnUpdate.setText("Update");
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
-            }
-        });
-
-        btnDelete.setText("Delete");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
-        btnCancel.setText("Cancel");
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
-            }
-        });
-
-        tblBuku.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Kode Buku", "Judul Buku", "Pengarang", "Penerbit", "Tahun Terbit"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblBuku.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblBukuMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(tblBuku);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtKodeBuku1)
-                        .addGap(45, 45, 45)
-                        .addComponent(txtKodeBuku))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(txtJudulBuku2)
-                        .addGap(45, 45, 45)
-                        .addComponent(txtJudulBuku))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPengarang1)
-                            .addComponent(txtPenerbit1)
-                            .addComponent(txtTahunTerbit1))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTahunTerbit)
-                            .addComponent(txtPenerbit)
-                            .addComponent(txtPengarang)))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE))
-                .addGap(29, 29, 29))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(btnInsert)
-                .addGap(49, 49, 49)
-                .addComponent(btnUpdate)
-                .addGap(31, 31, 31)
-                .addComponent(btnDelete)
-                .addGap(35, 35, 35)
-                .addComponent(btnCancel)
-                .addContainerGap(165, Short.MAX_VALUE))
+            .addGap(0, 584, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtKodeBuku1)
-                    .addComponent(txtKodeBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtJudulBuku2)
-                    .addComponent(txtJudulBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPengarang1)
-                    .addComponent(txtPengarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPenerbit1)
-                    .addComponent(txtPenerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTahunTerbit1)
-                    .addComponent(txtTahunTerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInsert)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete)
-                    .addComponent(btnCancel))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+            .addGap(0, 433, Short.MAX_VALUE)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
-        // TODO add your handling code here:
-        controller.saveBuku();
-        controller.tampilData();
-        controller.bersihForm();
-    }//GEN-LAST:event_btnInsertActionPerformed
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-        controller.updateBuku();
-        controller.tampilData();
-        controller.bersihForm();
-    }//GEN-LAST:event_btnUpdateActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
-        controller.deleteBuku();
-        controller.tampilData();
-        controller.bersihForm();
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        // TODO add your handling code here:
-          controller.bersihForm();
-    }//GEN-LAST:event_btnCancelActionPerformed
-
-    private void tblBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBukuMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_tblBukuMouseClicked
-/**
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -314,25 +78,5 @@ BukuController controller;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnInsert;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable tblBuku;
-    private javax.swing.JTextField txtJudulBuku;
-    private javax.swing.JLabel txtJudulBuku2;
-    private javax.swing.JTextField txtKodeBuku;
-    private javax.swing.JLabel txtKodeBuku1;
-    private javax.swing.JTextField txtPenerbit;
-    private javax.swing.JLabel txtPenerbit1;
-    private javax.swing.JTextField txtPengarang;
-    private javax.swing.JLabel txtPengarang1;
-    private javax.swing.JTextField txtTahunTerbit;
-    private javax.swing.JLabel txtTahunTerbit1;
     // End of variables declaration//GEN-END:variables
 }
