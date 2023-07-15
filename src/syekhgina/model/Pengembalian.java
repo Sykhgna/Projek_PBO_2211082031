@@ -9,51 +9,99 @@ package syekhgina.model;
  * @author HP
  */
 public class Pengembalian {
-    private Peminjaman p;
-    private String tgldikembalikan;
-    private String terlambat;
-    private String denda;
+    private String kodeAnggota;
+    private String namaAnggota;
+    private String Kodebuku;
+    private String judulBuku;
+    private String tglpinjam;
+    private String tglkembali;
+    private String Dikembalikan;
+    private int terlambat;
+    private double denda;
     
-    public Pengembalian(){
+    public Pengembalian(){}
 
-    }
-
-    public Pengembalian(Peminjaman p, String tgldikembalikan, String terlambat, String denda) {
-        this.p = p;
-        this.tgldikembalikan = tgldikembalikan;
+    public Pengembalian(String kodeAnggota, String namaAnggota, String Kodebuku, String judulBuku, String tglpinjam, String tglkembali, int terlambat, double denda) {
+        this.kodeAnggota = kodeAnggota;
+        this.namaAnggota = namaAnggota;
+        this.Kodebuku = Kodebuku;
+        this.judulBuku = judulBuku;
+        this.tglpinjam = tglpinjam;
+        this.tglkembali = tglkembali;
+        this.Dikembalikan = Dikembalikan;
         this.terlambat = terlambat;
         this.denda = denda;
     }
 
-    public Peminjaman getP() {
-        return p;
+    public String getKodeAnggota() {
+        return kodeAnggota;
     }
 
-    public String getTgldikembalikan() {
-        return tgldikembalikan;
+    public String getNamaAnggota() {
+        return namaAnggota;
     }
 
-    public String getTerlambat() {
+    public String getKodebuku() {
+        return Kodebuku;
+    }
+    
+    public String getJudulBuku() {
+        return judulBuku;
+    }
+
+    public String getTglpinjam() {
+        return tglpinjam;
+    }
+
+    public String getTglkembali() {
+        return tglkembali;
+    }
+
+    public String getDikembalikan() {
+        return Dikembalikan;
+    }
+
+    public int getTerlambat() {
         return terlambat;
     }
 
-    public String getDenda() {
+    public double getDenda() {
+        denda = terlambat * 2000;
         return denda;
     }
 
-    public void setP(Peminjaman p) {
-        this.p = p;
+    public void setKodeAnggota(String kodeAnggota) {
+        this.kodeAnggota = kodeAnggota;
     }
 
-    public void setTgldikembalikan(String tgldikembalikan) {
-        this.tgldikembalikan = tgldikembalikan;
+    public void setNamaAnggota(String namaAnggota) {
+        this.namaAnggota = namaAnggota;
     }
 
-    public void setTerlambat(String terlambat) {
+    public void setKodebuku(String Kodebuku) {
+        this.Kodebuku = Kodebuku;
+    }
+
+    public void setJudulBuku(String judulBuku) {
+        this.judulBuku = judulBuku;
+    }
+    public void setTglpinjam(String tglpinjam) {
+        this.tglpinjam = tglpinjam;
+    }
+
+    public void setTglkembali(String tglkembali) {
+        this.tglkembali = tglkembali;
+    }
+
+    public void setDikembalikan(String Dikembalikan) {
+        this.Dikembalikan = Dikembalikan;
+    }
+
+    public void setTerlambat(int terlambat) {
         this.terlambat = terlambat;
     }
 
-    public void setDenda(String denda) {
+    public void setDenda(double denda) {
         this.denda = denda;
-    }
+    } 
 }

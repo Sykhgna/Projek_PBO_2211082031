@@ -8,13 +8,14 @@ import syekhgina.model.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 /**
  *
  * @author HP
  */
-public class PengembalianDaoImpl PengembalianDaoImpl {
+public class PengembalianDaoImpl implements PengembalianDao {
        private Connection con;
    
     public PengembalianDaoImpl(Connection con){
@@ -24,12 +25,12 @@ public class PengembalianDaoImpl PengembalianDaoImpl {
     public void insert (Pengembalian p) throws Exception{
        String sql = "insert into Peminjaman values(?,?,?,?,?,?)";
        PreparedStatement ps = con.prepareStatement(sql);
-       ps.setString(1,p.getP().getAnggota().getKodeanggota());
-       ps.setString(2,p.getP().getBuku().getKodeBuku());
-       ps.setString(3,p.getP().getTglpinjam());
-       ps.setString(4,p.getTgldikembalikan());
-       ps.setString(5,p.getTerlambat());
-       ps.setString(6,p.getDenda());
+      ps.setString(1,p.getKodeAnggota());
+        ps.setString(2,p.getKodebuku());
+        ps.setString(3,p.getTglpinjam());
+        ps.setString(4,p.getDikembalikan());
+        ps.setInt(5,p.getTerlambat());
+        ps.setDouble(6,p.getDenda());
        ps.executeUpdate();
        ps.close();
     }
@@ -37,21 +38,21 @@ public class PengembalianDaoImpl PengembalianDaoImpl {
         String sql = "UPDATE pengembalian set Tgldikembalikan=?, terlambat=?, denda=? "
                     +"WHERE kodeanggota=? and kodebuku=? and tglpinjam=?";
         PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(4,p.getP().getAnggota().getKodeanggota());
-        ps.setString(5,p.getP().getBuku().getKodeBuku());
-        ps.setString(6,p.getP().getTglpinjam());
-        ps.setString(1,p.getTgldikembalikan());
-        ps.setString(2,p.getTerlambat());
-        ps.setString(3,p.getDenda());
+        ps.setString(4,p.getKodeAnggota());
+        ps.setString(5,p.getKodebuku());
+        ps.setString(6,p.getTglpinjam());
+        ps.setString(1,p.getDikembalikan());
+        ps.setInt(2,p.getTerlambat());
+        ps.setDouble(3,p.getDenda());
         ps.executeUpdate();
     }    
     public void delete(Pengembalian p) throws Exception{
             
         String sql = "DELETE FROM pengembalian WHERE kodeanggota=? and kodebuku=? and tglpinjam=?";
         PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1,p.getP().getAnggota().getKodeanggota());
-        ps.setString(2,p.getP().getBuku().getKodeBuku());
-        ps.setString(3,p.getP().getTglpinjam());
+        ps.setString(1,p.getKodeAnggota());
+        ps.setString(2,p.getKodebuku());
+        ps.setString(3,p.getTglpinjam());
         ps.executeUpdate();
     }
     public Pengembalian getPengembalian(String kodeanggota, String kodebuku, String tglpinjam) throws Exception{
@@ -67,32 +68,34 @@ public class PengembalianDaoImpl PengembalianDaoImpl {
             PeminjamanDao peminjamanDao = new PeminjamanDaoImpl(con);
             Peminjaman peminjaman = peminjamanDao.getPeminjaman( rs.getString(1), 
                     rs.getString(2), rs.getString(3));
-            p.setP(peminjaman);  
-            p.setTgldikembalikan(rs.getString(3));
-            p.setTerlambat(rs.getString(4));
-            p.setDenda(rs.getString(5));
+            
         }
         return p;
     } 
     
 
-   public List<Pengembalian> getAll()throws Exception {
+   public List<Pengembalian> getAll()throws SQLException {
         String sql = "SELECT * FROM pengembalian";
         PreparedStatement ps = con.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         Pengembalian p; 
         List <Pengembalian> list = new ArrayList<>();
         while(rs.next()){
-             p = new Pengembalian();
+            p = new Pengembalian();
             PeminjamanDao peminjamanDao = new PeminjamanDaoImpl(con);
-            Peminjaman peminjaman = peminjamanDao.getPeminjaman( rs.getString(1), 
-                    rs.getString(2), rs.getString(3));
-            p.setP(peminjaman);  
-            p.setTgldikembalikan(rs.getString(3));
-            p.setTerlambat(rs.getString(4));
-            p.setDenda(rs.getString(5));
+            
             list.add(p);
         }
         return list;
+    }
+
+    @Override
+    public int selisihtgl(String tgl1, String tgl2) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<Pengembalian> cari(String kode, String cari) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
