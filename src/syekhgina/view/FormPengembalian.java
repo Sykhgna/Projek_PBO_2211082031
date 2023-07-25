@@ -3,19 +3,64 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package syekhgina.view;
-
+import syekhgina.controller.PengembalianController;
+import syekhgina.dao.PengembalianDao;
+import syekhgina.dao.PengembalianDaoImpl;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 /**
  *
  * @author HP
  */
 public class FormPengembalian extends javax.swing.JFrame {
-
+  private PengembalianController controller;
+  
     /**
      * Creates new form FormPengembalian
      */
     public FormPengembalian() {
         initComponents();
+        
+        controller = new PengembalianController(this);
+        controller.IsiCombo();
+        controller.Clear();
+        controller.TampilData();
     }
+
+    public JTextField getTxtTanggalPinjam() {
+        return txtTanggalPinjam;
+    }
+
+    public JComboBox<String> getCboKodeAnggota() {
+        return cboKodeAnggota;
+    }
+
+    public JComboBox<String> getCboKodeBuku() {
+        return cboKodeBuku;
+    }
+
+    public JTable getTblPengembalian() {
+        return tblPengembalian;
+    }
+
+    public JTextField getTxtDenda() {
+        return txtDenda;
+    }
+
+    public JTextField getTxtTanggalDikembalikan() {
+        return txtTanggalDikembalikan;
+    }
+
+    public JTextField getTxtTerlambat() {
+        return txtTerlambat;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,7 +79,7 @@ public class FormPengembalian extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         cboKodeAnggota = new javax.swing.JComboBox<>();
         cboKodeBuku = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        txtTanggalPinjam = new javax.swing.JTextField();
         txtTanggalDikembalikan = new javax.swing.JTextField();
         txtTerlambat = new javax.swing.JTextField();
         txtDenda = new javax.swing.JTextField();
@@ -67,8 +112,13 @@ public class FormPengembalian extends javax.swing.JFrame {
         });
 
         cboKodeBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboKodeBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboKodeBukuActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setText("jTextField1");
+        txtTanggalPinjam.setText("jTextField1");
 
         txtTanggalDikembalikan.setText("jTextField2");
 
@@ -77,6 +127,11 @@ public class FormPengembalian extends javax.swing.JFrame {
         txtDenda.setText("jTextField4");
 
         btnInsert.setText("Insert");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +200,7 @@ public class FormPengembalian extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtDenda)
                                     .addComponent(txtTerlambat)
-                                    .addComponent(jTextField1)
+                                    .addComponent(txtTanggalPinjam)
                                     .addComponent(txtTanggalDikembalikan)
                                     .addComponent(cboKodeBuku, 0, 357, Short.MAX_VALUE)
                                     .addComponent(cboKodeAnggota, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -172,7 +227,7 @@ public class FormPengembalian extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTanggalPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -201,19 +256,37 @@ public class FormPengembalian extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        controller.update();
+        controller.TampilData();
+        controller.Clear();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
+        controller.Clear();
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
+        controller.delete();
+        controller.TampilData();
+        controller.Clear();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void cboKodeAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKodeAnggotaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboKodeAnggotaActionPerformed
+
+    private void cboKodeBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKodeBukuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboKodeBukuActionPerformed
+
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        // TODO add your handling code here:
+        controller.insert();
+        controller.TampilData();
+        controller.Clear();
+    }//GEN-LAST:event_btnInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,10 +337,10 @@ public class FormPengembalian extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tblPengembalian;
     private javax.swing.JTextField txtDenda;
     private javax.swing.JTextField txtTanggalDikembalikan;
+    private javax.swing.JTextField txtTanggalPinjam;
     private javax.swing.JTextField txtTerlambat;
     // End of variables declaration//GEN-END:variables
 }

@@ -91,11 +91,16 @@ public class PengembalianDaoImpl implements PengembalianDao {
 
     @Override
     public int selisihtgl(String tgl1, String tgl2) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int selisih = 0;
+        String sql = "SELECT DATEDIFF(?,?) as selisih";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, tgl1);
+        ps.setString(2, tgl2);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+            selisih = rs.getInt(1);
+        }
+        return selisih;
     }
-
-    @Override
-    public List<Pengembalian> cari(String kode, String cari) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }
